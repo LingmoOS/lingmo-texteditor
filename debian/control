@@ -1,14 +1,14 @@
-Source: cute-texteditor
+Source: lingmo-texteditor
 Section: devel
 Priority: optional
-Maintainer: LingmoOS Packaging Team <2422586862@qq.com>
+Maintainer: LingmoOS Packaging Team <lingmo@lingmo.org>
 Build-Depends: cmake,
                debhelper (>= 9),
-			   libkf5syntaxhighlighting-dev
-Standards-Version: 1.0.6
-Homepage: https://github.com/LingmoOS/texteditor
+	           libkf5syntaxhighlighting-dev
+Standards-Version: 4.5.0
+Homepage: https://github.com/LingmoOS/lingmo-texteditor
 
-Package: cute-texteditor
+Package: lingmo-texteditor
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: LingmoOS Texteditor

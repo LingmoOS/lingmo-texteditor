@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2023 Lingmo OS Team
  *
- * Author:     Lingmo OS Team <cuteos@foxmail.com>
+ * Author:     Lingmo OS Team <lingmoos@foxmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ QStringList formatUriList(const QStringList &list)
                 val.append(absPath);
         }
         else
-            qDebug() << "cute-texteditor: " << i << "doesn't exist";
+            qDebug() << "lingmo-texteditor: " << i << "doesn't exist";
     }
 
     return val;
@@ -75,13 +75,13 @@ int main(int argc, char *argv[])
 #endif
 
     QApplication app(argc, argv);
-    app.setOrganizationName("cuteys");
+    app.setOrganizationName("Lingmo");
 
-    qmlRegisterType<DocumentHandler>("Cute.TextEditor", 1, 0, "DocumentHandler");
-    qmlRegisterType<FileHelper>("Cute.TextEditor", 1, 0, "FileHelper");
+    qmlRegisterType<DocumentHandler>("Lingmo.TextEditor", 1, 0, "DocumentHandler");
+    qmlRegisterType<FileHelper>("Lingmo.TextEditor", 1, 0, "FileHelper");
 
     QCommandLineParser parser;
-    parser.setApplicationDescription("A text editor specifically designed for CuteOS.");
+    parser.setApplicationDescription("A text editor specifically designed for LingmoOS.");
     parser.addHelpOption();
     parser.setSingleDashWordOptionMode(QCommandLineParser::ParseAsCompactedShortOptions);
     parser.addPositionalArgument("files", "Files", "[FILE1, FILE2,...]");
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
 
     /** 加载翻译 */
     QLocale locale;
-    QString qmFilePath = QString("%1/%2.qm").arg("/usr/share/cute-texteditor/translations/").arg(locale.name());
+    QString qmFilePath = QString("%1/%2.qm").arg("/usr/share/lingmo-texteditor/translations/").arg(locale.name());
     if (QFile::exists(qmFilePath)) {
         QTranslator *translator = new QTranslator(QApplication::instance());
         if (translator->load(qmFilePath)) {
@@ -121,10 +121,6 @@ int main(int argc, char *argv[])
             translator->deleteLater();
         }
     }
-
-    /** 导入模块 */
-    engine.addImportPath(QStringLiteral("qrc:/"));
-    engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     return app.exec();
 }

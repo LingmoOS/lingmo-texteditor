@@ -1,6 +1,6 @@
 # Text Editor
 
-Elegant text editor for CuteOS. 
+Elegant text editor for LingmoOS. 
 
 ## Dependencies
 

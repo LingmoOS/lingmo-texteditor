@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 CuteOS Team.
+ * Copyright (C) 2023 LingmoOS Team.
  */
 
 import QtQuick 2.15
@@ -9,8 +9,8 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import Qt.labs.platform 1.1
 import QtQuick.Dialogs 1.3
-import CuteUI 1.0 as CuteUI
-import Cute.TextEditor 1.0
+import LingmoUI 1.0 as LingmoUI
+import Lingmo.TextEditor 1.0
 
 Item {
     id: control
@@ -33,9 +33,9 @@ Item {
         cursorPosition: body.cursorPosition
         selectionStart: body.selectionStart
         selectionEnd: body.selectionEnd
-        backgroundColor: CuteUI.Theme.backgroundColor
+        backgroundColor: LingmoUI.Theme.backgroundColor
         enableSyntaxHighlighting: true
-        theme: CuteUI.Theme.darkMode ? "Breeze Dark" : "Breeze Light"
+        theme: LingmoUI.Theme.darkMode ? "Breeze Dark" : "Breeze Light"
 
         onSearchFound: {
             body.select(start, end)
@@ -138,11 +138,11 @@ Item {
         }
     }
 
-    CuteUI.AboutDialog {
+    LingmoUI.AboutDialog {
         id: _aboutDialog
         name: qsTr("Lingmo OS Text Editor")
         description: qsTr("A text editor specifically designed for Lingmo OS.")
-        iconSource: "image://icontheme/cute-texteditor"
+        iconSource: "image://icontheme/lingmo-texteditor"
     }
 
     ScrollView {
@@ -157,7 +157,7 @@ Item {
         Flickable {
             id: _flickable
 
-            CuteUI.WheelHandler {
+            LingmoUI.WheelHandler {
                 id: wheelHandler
                 target: _flickable
             }
@@ -181,14 +181,14 @@ Item {
                 activeFocusOnPress: true
                 activeFocusOnTab: true
 
-                leftPadding: _linesCounter.width + CuteUI.Units.smallSpacing
-                padding: CuteUI.Units.smallSpacing
-                color: CuteUI.Theme.textColor
+                leftPadding: _linesCounter.width + LingmoUI.Units.smallSpacing
+                padding: LingmoUI.Units.smallSpacing
+                color: LingmoUI.Theme.textColor
 
                 font.family: "Noto Mono"
 
                 background: Rectangle {
-                    color: CuteUI.Theme.backgroundColor
+                    color: LingmoUI.Theme.backgroundColor
                 }
 
                 Keys.enabled: true
@@ -321,8 +321,8 @@ Item {
                     width: 32
                     height: parent.height
                     opacity: isCurrentItem ? 1 : 0.7
-                    color: isCurrentItem ? CuteUI.Theme.highlightColor
-                                         : CuteUI.Theme.textColor
+                    color: isCurrentItem ? LingmoUI.Theme.highlightColor
+                                         : LingmoUI.Theme.textColor
                     font.pointSize: body.font.pointSize
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter

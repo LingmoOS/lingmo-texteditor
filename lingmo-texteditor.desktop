@@ -1,10 +1,10 @@
 [Desktop Entry]
 Categories=Utility;TextEditor;
 Comment=General text editor
-Exec=/usr/bin/cute-texteditor %F
-Icon=cute-texteditor
-Name=Cute Text Editor
-GenericName=Cute Text Editor
+Exec=/usr/bin/lingmo-texteditor %F
+Icon=lingmo-texteditor
+Name=Lingmo Text Editor
+GenericName=Lingmo Text Editor
 StartupNotify=false
 Type=Application
 X-MultipleArgs=false

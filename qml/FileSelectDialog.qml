@@ -1,18 +1,18 @@
 /*
- * Copyright (C) 2023 CuteOS Team.
+ * Copyright (C) 2023 LingmoOS Team.
  */
 
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Window 2.12
-import CuteUI 1.0 as CuteUI
+import LingmoUI 1.0 as LingmoUI
 
-CuteUI.Window {
+LingmoUI.Window {
     id: control
 
-    property var contentWidth: _mainLayout.implicitWidth + CuteUI.Units.largeSpacing * 2
-    property var contentHeight: _mainLayout.implicitHeight + header.height + CuteUI.Units.largeSpacing * 2
+    property var contentWidth: _mainLayout.implicitWidth + LingmoUI.Units.largeSpacing * 2
+    property var contentHeight: _mainLayout.implicitHeight + header.height + LingmoUI.Units.largeSpacing * 2
     property var fileUrl: ""
     property var displayText: ""
 
@@ -28,25 +28,25 @@ CuteUI.Window {
     maximumHeight: contentHeight
     minimizeButtonVisible: false
 
-    background.color: CuteUI.Theme.secondBackgroundColor
+    background.color: LingmoUI.Theme.secondBackgroundColor
 
     signal okBtnClicked
 
     ColumnLayout {
         id: _mainLayout
         anchors.fill: parent
-        spacing: CuteUI.Units.smallSpacing
-        anchors.margins: CuteUI.Units.smallSpacing
+        spacing: LingmoUI.Units.smallSpacing
+        anchors.margins: LingmoUI.Units.smallSpacing
 
         Label {
             text: displayText
         }
         ColumnLayout {
-            spacing: CuteUI.Units.largeSpacing
+            spacing: LingmoUI.Units.largeSpacing
 
             TextInput{
                 id:textInput
-                height: CuteUI.Units.largeSpacing
+                height: LingmoUI.Units.largeSpacing
                 width: parent.width
                 activeFocusOnPress: true
                 autoScroll: true
@@ -62,7 +62,7 @@ CuteUI.Window {
             }
 
             RowLayout {
-                spacing: CuteUI.Units.largeSpacing
+                spacing: LingmoUI.Units.largeSpacing
 
                 Button {
                     text: qsTr("Yes")

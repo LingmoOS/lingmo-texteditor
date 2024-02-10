@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 CuteOS Team.
+ * Copyright (C) 2023 LingmoOS Team.
  */
 
 import QtQuick 2.15
@@ -7,10 +7,10 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Dialogs 1.3
-import CuteUI 1.0 as CuteUI
-import Cute.TextEditor 1.0
+import LingmoUI 1.0 as LingmoUI
+import Lingmo.TextEditor 1.0
 
-CuteUI.Window {
+LingmoUI.Window {
     id: root
     width: 640
     height: 480
@@ -47,14 +47,14 @@ CuteUI.Window {
     headerItem: Item {
         Rectangle {
             anchors.fill: parent
-            color: CuteUI.Theme.backgroundColor
+            color: LingmoUI.Theme.backgroundColor
         }
 
-        CuteUI.TabBar {
+        LingmoUI.TabBar {
             id: _tabbar
             anchors.fill: parent
-            anchors.margins: CuteUI.Units.smallSpacing / 2
-            anchors.rightMargin: CuteUI.Units.largeSpacing * 4
+            anchors.margins: LingmoUI.Units.smallSpacing / 2
+            anchors.rightMargin: LingmoUI.Units.largeSpacing * 4
 
             model: _tabView.count
             currentIndex : _tabView.currentIndex
@@ -63,7 +63,7 @@ CuteUI.Window {
                 addTab()
             }
 
-            delegate: CuteUI.TabButton {
+            delegate: LingmoUI.TabButton {
                 id: _tabBtn
                 text: _tabView.contentModel.get(index).tabName
                 implicitHeight: _tabbar.height
@@ -107,7 +107,7 @@ CuteUI.Window {
         anchors.fill: parent
         spacing: 0
 
-        CuteUI.TabView {
+        LingmoUI.TabView {
             id: _tabView
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -117,18 +117,18 @@ CuteUI.Window {
             id: _bottomItem
             z: 999
             Layout.fillWidth: true
-            Layout.preferredHeight: 20 + CuteUI.Units.smallSpacing
+            Layout.preferredHeight: 20 + LingmoUI.Units.smallSpacing
 
             Rectangle {
                 anchors.fill: parent
-                color: CuteUI.Theme.backgroundColor
+                color: LingmoUI.Theme.backgroundColor
             }
 
             ColumnLayout {
                 anchors.fill: parent
-                anchors.leftMargin: CuteUI.Units.smallSpacing
-                anchors.rightMargin: CuteUI.Units.smallSpacing
-                anchors.bottomMargin: CuteUI.Units.smallSpacing
+                anchors.leftMargin: LingmoUI.Units.smallSpacing
+                anchors.rightMargin: LingmoUI.Units.smallSpacing
+                anchors.bottomMargin: LingmoUI.Units.smallSpacing
 
                 Label {
                     text: _tabView.currentItem ? qsTr("Characters %1").arg(_tabView.currentItem.characterCount)
